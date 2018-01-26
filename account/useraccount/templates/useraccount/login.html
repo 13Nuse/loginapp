@@ -1,0 +1,22 @@
+{% extends "base/header.html" %}
+{% load static %}
+{% block head%}
+
+  <title>Login</title>
+        
+{% endblock%}
+
+{% block body %}
+
+  <div align="center">
+  <div class="container">
+    <h2>Please log into your account.</h2>
+    <form method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-default" type="submit" name="button">login</button></a> 
+    </form>
+  </div>
+  </div>
+
+{% endblock %}

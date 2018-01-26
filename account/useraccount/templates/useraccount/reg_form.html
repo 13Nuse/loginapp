@@ -1,0 +1,16 @@
+{% extends 'base/header.html' %}
+
+{% block body %}
+<div align="left" class="container">
+	<h3>Register</h3>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Submit</button>
+</form>
+
+</div>
+
+
+
+{% endblock %} 

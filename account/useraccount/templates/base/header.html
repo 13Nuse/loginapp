@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  
+    <!--BootstrapCSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    
+    <!--js bootstrap-->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    
+  <br>
+  <div class="container">
+    <nav class="navbar navbar-default navbar-light bg-light">
+  <a class="navbar-brand" href="#">Awaken</a>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="/useraccount/register">Register</a>
+      </li>
+    </ul>
+
+</nav>
+</div>
+
+    {% block head %}
+   
+    <title>Header</title>
+
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block body %}
+    
+    <p align="center">now this is the header</p>
+
+    {% endblock %}
+  </body>
+</html>
