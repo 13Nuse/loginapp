@@ -1,13 +1,21 @@
 {% extends 'base/header.html' %}
+{% load static %}
 {% block head %}
-    <title>Profile</title>
+
+    <title>Settings</title>
+}
+
 {% endblock %}
+
+
 {% block body %}
-<div class="container">
-	<form method="post">
-		{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+  <div align="center">
+  <div class="container">
+  	<form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
     </form>
-</div>
+  </div>
+  </div>  
 {% endblock %}

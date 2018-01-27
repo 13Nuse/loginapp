@@ -1,39 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  
     <!--BootstrapCSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    
-    <!--js bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">  
+    <link rel="stylesheet"    
+    <!--jsbootstrap-->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     
-  <br>
-  <div class="container">
-    <nav class="navbar navbar-default navbar-light bg-light">
-  <a class="navbar-brand" href="#">Awaken</a>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item active">
-        <a class="nav-link" href="/useraccount/register">Register</a>
-      </li>
+  {% block head %}
+  <title>Awaken</title>
+  {% endblock %}
+</head>
+<style>
+.bg-grey {
+  background-color: grey;
+}
+</style>
+<br>
+<div class="container bg-grey">
+<div class="container-fluid">
+<nav class="navbar fixed-top navbar-dark bg-dark">  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Awaken</a>
+    </div>  
+    {% if user.is_authenticated %}
+    <ul class="nav justify-context navbar-right">
+      <li class="nav-item active"><a class="nav-link" href="/useraccount/home">Home</a></li>
+      <li class="nav-item active"><a class="nav-link" href="/useraccount/profile">Profile</a></li>
+      <li class="nav-item active"><a class="nav-link" href="/useraccount/profile/edit">Settings</a></li>
+      <li class="nav-item active"><a class="nav-link" href="/useraccount/logout">Logout</a></li>
     </ul>
-
+    {% else %}
+    <ul class="nav justify-context navbar-right">
+      <li class="nav-item active"><a class="nav-link" href="/useraccount">Home</a></li>
+      <li class="nav-item active"><a class="nav-link" href="/useraccount/register">Register</a></li>
+      <li class="nav-item active"><a class="nav-link" href="/useraccount/login">Login</a></li>
+    </ul> 
 </nav>
 </div>
+</div> 
+<body>
+    {% endif %}
+{% block body %}
+{% load static %}
 
-    {% block head %}
-   
-    <title>Header</title>
+<section>
+<div class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    <img src="{% static '/useraccount/img/tree.png' %}" style="width:1100px;height:400px;">   
+  </div>
+</div>
+</section>
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Customize Profile</h3>
+      <p>Show people who you are</p>
+      <p>Ut enim ad..</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Browse Music</h3>
+      <p>See what others are listening to</p>
+      <p>Make your own playlist</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Join Now</h3>
+      <p>Connect to millions</p>
+      <p>Free to use</p>
+    </div>
+  </div>
+</div>
+</section>
 
-    {% endblock %}
-  </head>
+<section>
+<div align="center"> 
+<div class="jumbotron text-center">
+  <h1>Newsletter</h1>
+  <p>We specialize in blablabla</p>
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="25" placeholder="Email Address" required>
+    <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Submit</button>
+      </div>
+    </div>
+  </form>
+</div> 
+</div>
+</section>
+{% endblock %}
+</body>
 
-  <body>
-    {% block body %}
-    
-    <p align="center">now this is the header</p>
-
-    {% endblock %}
-  </body>
+<footer>
+  <nav class="navbar fixed-bottom navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">&copy 2017 DogSteet</a>
+  </nav>
+</footer>    
 </html>
